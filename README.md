@@ -95,7 +95,7 @@ portfolio/
 ## 🔗 Links
 
 - [Live Demo](your-portfolio-url)
-- [GitHub Repository](your-repo-url)
+- [GitHub Repository](https://github.com/aryanrai97861/A-portfolio-Website)
 
 ## 📄 License
 
