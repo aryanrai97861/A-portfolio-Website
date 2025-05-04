@@ -2,6 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Aside from "./components/Header";
+import SpaceBackground from "./components/SpaceBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,15 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#1f1e1e] text-white"> 
+      <body className="bg-[#151515] text-white"> 
+        <SpaceBackground />
         <Aside/>
         <main className="min-h-screen">
-        {children}
+          {children}
         </main>
       </body>
     </html>
