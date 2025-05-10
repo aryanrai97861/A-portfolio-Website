@@ -136,6 +136,7 @@ const Skills = () => {
                   { name: "React.js", icon: "/react.svg" },
                   { name: "Next.js", icon: "/nextjs.svg" },
                   { name: "JavaScript", icon: "/javascript.svg" },
+                  {name: "TypeScript", icon: "/typescript.svg"},
                   { name: "Tailwind CSS", icon: "/tailwind-css.svg" },
                 ].map((skill) => (
                   <div
@@ -169,6 +170,8 @@ const Skills = () => {
                 {[
                   { name: "Node.js", icon: "/nodejs.svg" },
                   { name: "Express.js", icon: "/express.svg" },
+                  {name: "Clerk", icon: "/clerk.png"},
+                  {name: "Convex", icon: "/convex.png"}
                 ].map((skill) => (
                   <div
                     key={skill.name}
@@ -198,7 +201,9 @@ const Skills = () => {
                 storage solutions.
               </p>
               <div className="flex flex-wrap justify-center gap-6">
-                {[{ name: "MongoDB", icon: "/mongodb.svg" }].map((skill) => (
+                {[{ name: "MongoDB", icon: "/mongodb.svg" },
+                  {name: "Convex", icon: "/convex.png"}
+                ].map((skill) => (
                   <div
                     key={skill.name}
                     className="flex flex-col items-center p-4 bg-neutral-800 rounded-lg w-24 hover:scale-105 transition-transform hover:shadow-lg hover:shadow-red-500/80"
@@ -232,6 +237,34 @@ const Skills = () => {
                   { name: "Postman", icon: "/postman.svg" },
                   { name: "Vercel", icon: "vercel1.svg" },
                 ].map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex flex-col items-center p-4 bg-neutral-800 rounded-lg w-24 hover:scale-105 transition-transform hover:shadow-lg hover:shadow-red-500/80"
+                  >
+                    <Image
+                      src={skill.icon}
+                      alt={skill.name}
+                      width={40}
+                      height={40}
+                      className="mb-2"
+                    />
+                    <span className="text-amber-50 text-sm text-center">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="skill-category border-b border-red-600 pb-16">
+              <h3 className="text-red-600 text-2xl font-semibold mb-4 text-center">
+                AI Tools
+              </h3>
+              <p className="text-gray-300 mb-6 max-w-3xl mx-auto text-center">
+                Integrated AI assistant into web applications for real-time conversational interfaces.
+              </p>
+              <div className="flex flex-wrap justify-center gap-6">
+                {[{ name: "Vapi", icon: "/vapi.png" }].map((skill) => (
                   <div
                     key={skill.name}
                     className="flex flex-col items-center p-4 bg-neutral-800 rounded-lg w-24 hover:scale-105 transition-transform hover:shadow-lg hover:shadow-red-500/80"
