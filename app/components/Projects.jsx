@@ -22,7 +22,7 @@ const Projects = () => {
                   transition-all duration-500 hover:w-32"
           ></div>
         </div>
-        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 ">
+        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300">
           <h3 className="text-2xl font-semibold mb-4 text-red-600">
             JWT Authentication Web App
           </h3>
@@ -120,7 +120,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80">
+        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300">
           <h3 className="text-2xl font-semibold mb-4 text-red-600">
             AI Fitness Trainer
           </h3>
@@ -233,7 +233,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80">
+        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300">
           <h3 className="text-2xl font-semibold mb-4 text-red-600">
             SAAS Code Editor
           </h3>

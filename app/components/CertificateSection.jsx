@@ -63,7 +63,7 @@ export default function CertificateSection() {
           {certificates.map((cert, idx) => (
             <div
               key={idx}
-              className="bg-[#1f1f1f] rounded-2xl p-6 shadow-md hover:shadow-red-500/40 transition-all duration-300"
+              className="bg-[#1f1f1f] rounded-2xl p-6 shadow-md hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300"
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="text-2xl">{cert.icon}</div>
