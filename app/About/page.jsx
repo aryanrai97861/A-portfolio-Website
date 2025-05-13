@@ -4,15 +4,15 @@ const Page = () => {
   const sections = [
     {
       title: "Introduction",
-      description: "Hey there! I'm Aryan Kumar Rai, an aspiring Full Stack Developer with hands-on experience in building web applications using the MERN stack. I'm passionate about creating clean, maintainable code and love working on both frontend and backend parts of web development. My projects reflect a strong understanding of secure authentication, REST APIs, and responsive UI design using modern tools like Tailwind CSS.",
+      description: "Hey there! I'm Aryan Kumar Rai, an aspiring Full Stack Developer with hands-on experience in building web applications. I'm passionate about writing clean, maintainable code and love working on both frontend and backend parts of web development. My projects reflect a strong understanding of Frontend and Backend Integrations , secure authentications , REST APIs , resposive UI design and AI integration.",
     },
     {
       title: "Technical Skills",
-      description: "I'm skilled in React, Next.js, Node.js, MongoDB, and Express.js, and I enjoy integrating frontend and backend systems seamlessly. I regularly use tools like Git for version control, Postman for API testing, and Vercel for deployment. I'm constantly pushing myself to learn more, explore new technologies, and improve as a developer.",
+      description: "I'm skilled in React, Next.js, Node.js, MongoDB, Clerk, Convex, Tailwind CSS and Express.js, and I enjoy integrating frontend and backend systems seamlessly. I regularly use tools like Git for version control, Postman for API testing, and Vercel and github for deployment. I am also skilled in integrating AIs technologies in my projects, I'm constantly pushing myself to learn more, explore new technologies, and improve as a developer.",
     },
     {
       title: "Career Goals",
-      description: "I'm currently looking for opportunities to contribute to exciting projects, collaborate with awesome teams, or even intern at companies where I can grow and make an impact.",
+      description: "I'm currently an intern where I am working on a practical product for my company..",
     },
     {
       title: "Outside of Code",

@@ -60,7 +60,7 @@ const page = () => {
                     View Profile
                   </a>
                   <a
-                    href="/Aryan Kumar Rai - CV.pdf" 
+                    href="/Aryan Kumar Rai - Resume.pdf" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded"
