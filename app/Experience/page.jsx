@@ -5,6 +5,17 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 const Page = () => {
   const experiences = [
+      {role: "MERN Stack Intern",
+      company: "Quantinent Analytics",
+      tech: "MERN Stack, FastAPI, Gitlab, OCR",
+        description: [
+          "Integrate OCR using Tesseract.js in a React application to autofill form fields from uploaded documents." ,
+          "Use the extracted text from PDFs to prepopulate form components automatically."
+        ],
+        date: "May 2025 - August 2025",
+        bgColor: "bg-[#78184a]",
+        type: "Internship"
+      },
     {
       role: "Bachelor of Technology in Computer Science",
       company: "Raj Kumar Goel Institute of Technology",
@@ -58,7 +69,7 @@ const Page = () => {
                  transition-all duration-500
                  animate-[pulse_3s_ease-in-out_infinite]"
         >
-          Education 
+          Experience
         </h2>
         <div
           className="h-1 w-24 bg-red-600 mx-auto mt-4 

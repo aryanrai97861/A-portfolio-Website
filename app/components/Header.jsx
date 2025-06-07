@@ -1,19 +1,35 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import HeaderBackground from "./HeaderBackground";
+import { motion } from "framer-motion";
 
 const navLinks = [
   {
     name: "Extracurricular Activities",
-    icon: "/skills.png",
     path: "/Extracurricular",
   },
-  { name: "Education", icon: "/Education.png", path: "/Education" },
-  { name: "Contact Me", icon: "/Contact.svg", path: "/Contact" },
-  { name: "About", icon: "/about.svg", path: "/About" },
+  { name: "Experience", path: "/Experience" },
+  { name: "Contact Me", path: "/Contact" },
+  { name: "About", path: "/About" },
 ];
+
+const fadeIn = (direction = "up", delay = 0) => ({
+  hidden: {
+    opacity: 0,
+    y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
+    x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    transition: {
+      delay,
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+});
 
 const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -36,15 +52,22 @@ const Header = () => {
   }, [lastScrollY]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 relative overflow-hidden transition-transform duration-300 ${
+    <motion.header
+      variants={fadeIn("down")}
+      initial="hidden"
+      animate="show"
+      className={`top-0 z-50 relative overflow-hidden transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <HeaderBackground />
       <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between py-4">
         {/* Logo/Name Section */}
-        <div className="flex items-center mb-4 md:mb-0">
+        <motion.div 
+          variants={fadeIn("right", 0.2)}
+          initial="hidden"
+          animate="show"
+          className="flex items-center mb-4 md:mb-0"
+        >
           <Link href="/" className="group relative">
             <span className="font-extrabold text-2xl md:text-3xl tracking-wider relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-red-700 to-red-500">
               Aryan Kumar Rai
@@ -64,28 +87,30 @@ const Header = () => {
               }}
             ></div>
           </Link>
-        </div>
+        </motion.div>
         {/* Navigation Links */}
-        <nav className="flex flex-wrap gap-4 md:gap-8 items-center justify-center">
-          {navLinks.map((item) => {
-            let gradient = 'bg-gradient-to-r from-orange-500 to-yellow-400';
-            let underline = 'bg-gradient-to-r from-orange-500 to-yellow-400';
-            return (
+        <motion.nav 
+          variants={fadeIn("left", 0.4)}
+          initial="hidden"
+          animate="show"
+          className="flex flex-wrap gap-4 md:gap-8 items-center justify-center"
+        >
+          {navLinks.map((item, index) => (
+            <motion.div
+              key={item.name}
+              variants={fadeIn("left", 0.1 * (index + 1))}
+            >
               <Link
-                key={item.name}
                 href={item.path}
                 className={`group flex flex-col items-center gap-1 px-2 py-1 rounded transition-colors`}
               >
-                <span className={`font-semibold text-base md:text-lg bg-clip-text text-transparent ${gradient} transition-all duration-300`}>{item.name}
-                  <span 
-                    className={`block h-0.5 mt-1 rounded-full ${underline} transition-all duration-500 group-hover:w-full w-0`} 
-                    style={{animation: 'nav-underline 3s ease-in-out infinite'}}
-                  ></span>
+                <span className="text-xl md:text-xl text-amber-600 group-hover:text-amber-600 transition-colors duration-300 relative">
+                  {item.name}
                 </span>
               </Link>
-            );
-          })}
-        </nav>
+            </motion.div>
+          ))}
+        </motion.nav>
       </div>
       <style jsx>{`
         @keyframes underline {
@@ -101,7 +126,7 @@ const Header = () => {
           50% { width: 100%; left: 0; }
         }
       `}</style>
-    </header>
+    </motion.header>
   );
 };
 

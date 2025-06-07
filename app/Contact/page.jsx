@@ -1,9 +1,40 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
-const page = () => {
+const Page = () => {
+  const fadeIn = (direction = "up", delay = 0) => {
+    return {
+      hidden: {
+        opacity: 0,
+        y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
+        x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+      },
+      show: {
+        opacity: 1,
+        y: 0,
+        x: 0,
+        transition: {
+          delay,
+          duration: 0.3,
+          ease: "easeOut",
+        },
+      },
+    };
+  };
+
   return (
-    <div className="min-h-screen text-white">
-      <div className="mt-12">
+    <motion.div
+      variants={fadeIn("up", 0.3)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      className="min-h-screen text-white"
+    >
+      <motion.div
+        variants={fadeIn("up", 0.4)}
+        className="mt-12"
+      >
         <div className="flex flex-col items-center">
           <div className="text-center transform transition-all duration-700 hover:scale-105">
             <h2
@@ -23,8 +54,14 @@ const page = () => {
           </div>
         </div>
 
-        <div className="max-w-xl mx-auto px-4 py-8">
-          <div className="bg-gray-900 rounded-lg p-6">
+        <motion.div
+          variants={fadeIn("up", 0.5)}
+          className="max-w-xl mx-auto px-4 py-8"
+        >
+          <motion.div
+            variants={fadeIn("up", 0.6)}
+            className="bg-gray-900 rounded-lg p-6"
+          >
             <div className="flex flex-col items-center md:flex-row md:items-start">
               <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
                 <img
@@ -35,13 +72,15 @@ const page = () => {
               </div>
               <div className="text-center md:text-left">
                 <h1 className="text-2xl font-bold">Aryan Kumar Rai</h1>
-                <p className="text-gray-400">Aspiring Web Developer</p>
+                <p className="text-gray-400">Aspiring Software Developer</p>
                 <p className="mt-2 text-sm">
-                  Aspiring full stack Web developer,
+                  Aspiring Software developer,
                   <br />
-                  skilled in Next.js, React.js, tailwind
+                  Skilled in RestAPI, MERN Stack,
                   <br />
-                  Node.js, Express.js, Javascript, MongoDB.
+                  Next.js, Cloud service, PrismaORM .
+                  <br />
+                  TypeScript, Gemini Integration and deployments.
                 </p>
                 <p className="mt-2 text-gray-400 text-sm">RKGIT | AKTU</p>
 
@@ -60,7 +99,7 @@ const page = () => {
                     View Profile
                   </a>
                   <a
-                    href="/Aryan Kumar Rai - Resume.pdf" 
+                    href="/Aryan Kumar Rai - Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded"
@@ -77,52 +116,55 @@ const page = () => {
                 </div>
               </div>
             </div>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          variants={fadeIn("up", 0.7)}
+          className="text-center mt-8"
+        >
+          <p className="text-lg">
+            I'm always up for a chat! Feel free to reach out.
+          </p>
+
+          <div className="mt-6 space-y-4">
+            <a
+              href="mailto:aryanrai97861@gmail.com"
+              className="flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-full py-3 px-6 mx-auto max-w-md hover:scale-105 transition-transform hover:shadow-lg hover:shadow-red-500/80"
+            >
+              <span className="bg-red-500 p-1 rounded mr-3">
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+              </span>
+              aryanrai97861@gmail.com
+            </a>
+
+            <a
+              href="tel:+917379963404"
+              className="flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-full py-3 px-6 mx-auto max-w-md hover:scale-105 transition-transform hover:shadow-lg hover:shadow-red-500/80"
+            >
+              <span className="bg-red-500 p-1 rounded mr-3">
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+              </span>
+              +91 7379963404
+            </a>
           </div>
-
-          <div className="text-center mt-8">
-            <p className="text-lg">
-              I'm always up for a chat! Feel free to reach out.
-            </p>
-
-            <div className="mt-6 space-y-4">
-              <a
-                href="mailto:aryanrai97861@gmail.com"
-                className="flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-full py-3 px-6 mx-auto max-w-md hover:scale-105 transition-transform hover:shadow-lg hover:shadow-red-500/80"
-              >
-                <span className="bg-red-500 p-1 rounded mr-3">
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                  </svg>
-                </span>
-                aryanrai97861@gmail.com
-              </a>
-
-              <a
-                href="tel:+917379963404"
-                className="flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-full py-3 px-6 mx-auto max-w-md hover:scale-105 transition-transform hover:shadow-lg hover:shadow-red-500/80"
-              >
-                <span className="bg-red-500 p-1 rounded mr-3">
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                  </svg>
-                </span>
-                +91 7379963404
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
-export default page;
+export default Page;
