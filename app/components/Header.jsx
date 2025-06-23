@@ -56,9 +56,7 @@ const Header = () => {
       variants={fadeIn("down")}
       initial="hidden"
       animate="show"
-      className={`top-0 z-50 relative overflow-hidden transition-transform duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
+      className={`top-0 z-50 relative overflow-hidden transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between py-4">
         {/* Logo/Name Section */}
@@ -71,21 +69,9 @@ const Header = () => {
           <Link href="/" className="group relative">
             <span className="font-extrabold text-2xl md:text-3xl tracking-wider relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-red-700 to-red-500">
               Aryan Kumar Rai
-              <span
-                className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-red-700 to-black"
-                style={{
-                  animation: "underline 3s ease-in-out infinite",
-                  width: "0%"
-                }}
-              ></span>
+              <span className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-red-700 to-black" style={{animation: "underline 3s ease-in-out infinite", width: "0%"}}></span>
             </span>
-            <div
-              className="absolute -inset-1 bg-gradient-to-r from-red-500/10 to-black/5 rounded-lg blur"
-              style={{
-                animation: "glow 4s ease-in-out infinite",
-                opacity: "0.3"
-              }}
-            ></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-red-500/10 to-black/5 rounded-lg blur" style={{animation: "glow 4s ease-in-out infinite", opacity: "0.3"}}></div>
           </Link>
         </motion.div>
         {/* Navigation Links */}
@@ -97,13 +83,10 @@ const Header = () => {
         >
           {navLinks.map((item, index) => (
             <motion.div
-              key={item.name}
+              key={item.path}
               variants={fadeIn("left", 0.1 * (index + 1))}
             >
-              <Link
-                href={item.path}
-                className={`group flex flex-col items-center gap-1 px-2 py-1 rounded transition-colors`}
-              >
+              <Link href={item.path} className={`group flex flex-col items-center gap-1 px-2 py-1 rounded transition-colors`}>
                 <span className="text-xl md:text-xl text-amber-600 group-hover:text-amber-600 transition-colors duration-300 relative">
                   {item.name}
                 </span>

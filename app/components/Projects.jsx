@@ -1,65 +1,30 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const Projects = () => {
-  // Add fadeIn animation function similar to Skills.jsx
-  const fadeIn = (direction = "up", delay = 0) => {
-    return {
-      hidden: {
-        opacity: 0,
-        y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
-        x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
-      },
-      show: {
-        opacity: 1,
-        y: 0,
-        x: 0,
-        transition: {
-          delay,
-          duration: 0.3,
-          ease: "easeOut",
-        },
-      },
-    };
-  };
-
   return (
     <section className="container">
-      <motion.div className="flex flex-col items-center m-24 border-b border-red-600">
+      <div className="flex flex-col items-center m-24 border-b border-red-600">
         {/* Title section */}
-        <motion.div
-          variants={fadeIn("up", 0.3)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="text-center transform transition-all duration-700 hover:scale-105"
-        >
-          <h2
-            className="text-4xl font-bold bg-gradient-to-r from-red-600 to-amber-500 
-            text-transparent bg-clip-text
-            inline-block py-2 px-6 rounded-lg
-            shadow-lg hover:shadow-red-500/30
-            transition-all duration-500
-            animate-[pulse_3s_ease-in-out_infinite]"
-          >
+        <div className="text-center transform transition-all duration-700 hover:scale-105">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-red-600 to-amber-500 text-transparent bg-clip-text inline-block py-2 px-6 rounded-lg shadow-lg hover:shadow-red-500/30 transition-all duration-500 animate-[pulse_3s_ease-in-out_infinite]">
             Projects
           </h2>
-          <div
-            className="h-1 w-24 bg-red-600 mx-auto mt-4 
-                  transition-all duration-500 hover:w-32"
-          ></div>
-        </motion.div>
+          <div className="h-1 w-24 bg-red-600 mx-auto mt-4 transition-all duration-500 hover:w-32"></div>
+        </div>
 
         {/* Project cards */}
-        <motion.div
-          variants={fadeIn("up", 0.4)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300"
-        >
+        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300">
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/AI_Text.png"
+              alt="Project Screenshot Placeholder"
+              width={500}
+              height={400}
+              className="rounded-lg object-cover border-2 border-gray-700 shadow"
+            />
+          </div>
           <h3 className="text-2xl font-semibold mb-4 text-red-600">
             AI Evaluator
           </h3>
@@ -67,7 +32,6 @@ const Projects = () => {
             Developed a Full-stack AI-powered Evaluator using React and RestAPI
             to automate and streamline answer assessment using Gemini.
           </p>
-
           <div className="mb-6">
             <h4 className="text-lg font-medium text-amber-100 mb-2">
               Key Features:
@@ -84,7 +48,6 @@ const Projects = () => {
               </li>
             </ul>
           </div>
-
           <div className="mb-6">
             <h4 className="text-lg font-medium text-amber-100 mb-2">
               User Flow:
@@ -101,7 +64,6 @@ const Projects = () => {
               <li>User views the report directly from the interface.</li>
             </ol>
           </div>
-
           <div className="flex items-center gap-4">
             <Link
               href="https://github.com/aryanrai97861/AI-Evaluator"
@@ -118,7 +80,6 @@ const Projects = () => {
               />
               GitHub Repo
             </Link>
-
             <Link
               href="https://ai-evaluator-sigma.vercel.app/"
               target="_blank"
@@ -134,29 +95,49 @@ const Projects = () => {
               />
               Deployed Link
             </Link>
-
             <div className="flex flex-wrap gap-3">
-              {["TypeScript", "Node.js", "Express.js", "React.js", "Gemini", "MongoDB"].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-neutral-700 text-amber-100 rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                )
-              )}
+              {[
+                "TypeScript",
+                "Node.js",
+                "Express.js",
+                "React.js",
+                "Gemini",
+                "MongoDB",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-neutral-700 text-amber-100 rounded-full text-sm"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeIn("up", 0.5)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300"
-        >
+        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300">
+          {/* Two Image Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="flex justify-center">
+              <Image
+                src="/AI_Fitness.png"
+                alt="AI Fitness Trainer Dashboard"
+                width={500}
+                height={400}
+                className="rounded-lg object-cover border-2 border-gray-700 shadow w-full h-64"
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/AI_Fitness1.png"
+                alt="AI Voice Assistant Interface"
+                width={500}
+                height={400}
+                className="rounded-lg object-cover border-2 border-gray-700 shadow w-full h-64"
+              />
+            </div>
+          </div>
+
           <h3 className="text-2xl font-semibold mb-4 text-red-600">
             AI Fitness Trainer
           </h3>
@@ -232,7 +213,6 @@ const Projects = () => {
               />
               GitHub Repo
             </Link>
-
             <Link
               href="https://ai-fitness-trainer-snowy.vercel.app/"
               target="_blank"
@@ -248,7 +228,6 @@ const Projects = () => {
               />
               Deployed Link
             </Link>
-
             <div className="flex flex-wrap gap-3">
               {[
                 "TypeScript",
@@ -267,15 +246,31 @@ const Projects = () => {
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeIn("up", 0.6)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300"
-        >
+        <div className="project-card mb-16 p-8 bg-neutral-800 rounded-xl shadow-lg hover:scale-102 transition-transform hover:shadow-lg hover:shadow-red-500/80 duration-300">
+          {/* Two Image Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="flex justify-center">
+              <Image
+                src="/saas.png"
+                alt="Code Editor Interface"
+                width={500}
+                height={400}
+                className="rounded-lg object-cover border-2 border-gray-700 shadow w-full h-64"
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/saas1.png"
+                alt="Code Execution and Results"
+                width={500}
+                height={400}
+                className="rounded-lg object-cover border-2 border-gray-700 shadow w-full h-64"
+              />
+            </div>
+          </div>
+
           <h3 className="text-2xl font-semibold mb-4 text-red-600">
             SAAS Code Editor
           </h3>
@@ -324,8 +319,8 @@ const Projects = () => {
               </li>
               <li>
                 The platform integrates with Piston's execution engine to run
-                code in a sandboxed environment, delivering
-                validation results directly in the interface.
+                code in a sandboxed environment, delivering validation results
+                directly in the interface.
               </li>
               <li>
                 All code snippets are automatically versioned and stored in our
@@ -333,9 +328,9 @@ const Projects = () => {
                 accessible across devices.
               </li>
               <li>
-                Unlockable advanced collaboration features
-                through our Lemon Squeezy payment gateway, enabling snippet
-                sharing, and, commenting.
+                Unlockable advanced collaboration features through our Lemon
+                Squeezy payment gateway, enabling snippet sharing, and,
+                commenting.
               </li>
             </ol>
           </div>
@@ -356,7 +351,6 @@ const Projects = () => {
               />
               GitHub Repo
             </Link>
-
             <Link
               href="https://saas-code-editor-peach.vercel.app/"
               target="_blank"
@@ -372,7 +366,6 @@ const Projects = () => {
               />
               Deployed Link
             </Link>
-
             <div className="flex flex-wrap gap-3">
               {["TypeScript", "Next.js", "Tailwind CSS", "Convex", "Clerk"].map(
                 (tech) => (
@@ -386,8 +379,8 @@ const Projects = () => {
               )}
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 };
