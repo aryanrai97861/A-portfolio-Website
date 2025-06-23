@@ -253,7 +253,7 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="flex justify-center">
               <Image
-                src="/saas.png"
+                src="/SAAS.png"
                 alt="Code Editor Interface"
                 width={500}
                 height={400}
